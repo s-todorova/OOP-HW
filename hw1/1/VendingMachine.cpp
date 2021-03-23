@@ -1,5 +1,6 @@
 #include "VendingMachine.hpp"
 #include <cstring>
+#pragma warning(disable : 4996)
 
 VendingMachine::VendingMachine()
 {

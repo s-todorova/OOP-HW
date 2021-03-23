@@ -11,7 +11,7 @@ public:
 
     Drink& operator[](unsigned int index);
 
-    unsigned int vec_size() const;
+    int vec_size() const;
     void push_back(Drink element);
     bool erase(unsigned int index);
 private:

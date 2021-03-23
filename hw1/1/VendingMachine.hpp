@@ -13,6 +13,7 @@ public:
     int buy_drink(const char* drink_name, const double money);
 
     double get_income() const;
+    friend void printInv(VendingMachine a);
 
 private:
     double income;

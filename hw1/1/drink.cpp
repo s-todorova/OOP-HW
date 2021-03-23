@@ -1,5 +1,6 @@
 #include "drink.hpp"
 #include <cstring>
+#pragma warning(disable : 4996)
 
 Drink::Drink()
 {
@@ -40,10 +41,12 @@ Drink& Drink::operator=(const Drink& rhs)
 
 bool Drink::operator==(const Drink& rhs) const
 {
-	if (strcmp(name, rhs.name) != 0) {
+	if (strcmp(name, rhs.name) != 0)
+	{
 		return false;
 	}
-	else {
+	else
+	{
 		return true;
 	}
 }
@@ -81,7 +84,6 @@ void Drink::set_name(const char* new_name)
 
 void Drink::copyName(const char* src)
 {
-	int nameLength = strlen(src);
-	name = new char[nameLength + 1];
+	name = new char[strlen(src) + 1];
 	strcpy(name, src);
 }

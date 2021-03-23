@@ -1,11 +1,13 @@
 #include "DrinkVector.hpp"
 #include <cstring>
-
-DrinkVector::DrinkVector() : array(nullptr), size(0)
+#pragma warning(disable : 4996)
+DrinkVector::DrinkVector()
 {
+    array = nullptr;
+    size = 0;
 }
 
-DrinkVector::DrinkVector(const DrinkVector& rhs) // : size(rhs.size)
+DrinkVector::DrinkVector(const DrinkVector& rhs)
 {
     copyArray(rhs.array, rhs.size);
 }
@@ -14,7 +16,7 @@ DrinkVector& DrinkVector::operator=(const DrinkVector& rhs)
 {
     if (&rhs != this)
     {
-        delete[] array; // don't worry; deleting nullptr is totally fine
+        delete[] array;
         copyArray(rhs.array, rhs.size);
     }
     return *this;
@@ -30,7 +32,7 @@ Drink& DrinkVector::operator[](unsigned int index)
     return array[index];
 }
 
-unsigned int DrinkVector::vec_size() const
+int DrinkVector::vec_size() const
 {
     return size;
 }
