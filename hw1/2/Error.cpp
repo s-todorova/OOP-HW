@@ -1,5 +1,6 @@
 #include "Error.hpp"
 #include <cstring>
+#pragma warning(disable : 4996)
 
 Error::Error()
 {
@@ -15,10 +16,10 @@ Error::Error(const char* msg, ErrorType errType)
 	this->type = errType;
 }
 
-Error::~Error()
-{
-	delete[] message;
-}
+//Error::~Error()
+//{
+//	delete[] message;
+//}
 
 bool Error::hasMessage() const
 {
@@ -54,18 +55,18 @@ Error Error::newNone()
 
 Error Error::newBuildFailed(const char* message)
 {
-	Error BuildFailed("The build has failed!", ErrorType::BuildFailed);
+	Error BuildFailed(message, ErrorType::BuildFailed);
 	return BuildFailed;
 }
 
 Error Error::newWarning(const char* message)
 {
-	Error Warning("Warning!", ErrorType::Warning);
+	Error Warning(message, ErrorType::Warning);
 	return Warning;
 }
 
 Error Error::newFailedAssertion(const char* message)
 {
-	Error FailedAssertion("Failed Assertion!", ErrorType::FailedAssertion);
+	Error FailedAssertion(message, ErrorType::FailedAssertion);
 	return FailedAssertion;
 }
