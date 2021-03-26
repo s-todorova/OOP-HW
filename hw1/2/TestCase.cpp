@@ -6,7 +6,6 @@ TestCase::TestCase(const std::string& name, const Error& error)
 	this->error = error;
 }
 
-
 std::string TestCase::getName() const
 {
 	return name;

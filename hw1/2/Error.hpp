@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 enum class ErrorType {
     None,
@@ -8,16 +9,15 @@ enum class ErrorType {
     FailedAssertion,
 };
 
-class Error {                                //NE E OSVOBODENA PAMETTA!! DA IZMISLQ KAK/KOGA I DALI S DESTRUKTOR
-private:
-    char* message;
-    ErrorType type;
-
+class Error {
 public:
     Error();
-    Error(const char*, ErrorType);
-    //~Error();
-
+    Error(const char* msg, ErrorType);
+    Error(ErrorType);// special constructor for None error type
+    Error& operator=(const Error&);
+    Error(const Error&);
+    ~Error();
+ 
     bool hasMessage() const;   
     const char* getMessage() const;
     ErrorType getType() const;
@@ -26,4 +26,9 @@ public:
     static Error newBuildFailed(const char* message);
     static Error newWarning(const char* message);
     static Error newFailedAssertion(const char* message);
+
+private:
+    char* message;
+    ErrorType type;
+    void copyMessage(const char*); //helper function
 };
