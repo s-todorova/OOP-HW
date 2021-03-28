@@ -1,14 +1,8 @@
 #include "TestSuite.hpp"
 
-TestSuite::TestSuite()
-{
-	name = "";
-}
-
 TestSuite::TestSuite(std::string name)
 {
 	this->name = name;
-	testCases;
 }
 
 void TestSuite::add(const TestCase& to_add)
@@ -57,7 +51,8 @@ std::vector<TestCase> TestSuite::filterByErrorType(ErrorType errType) const
 
 void TestSuite::removeByErrorType(ErrorType errType)
 {
-	for (int i = 0; i < testCases.size(); i++) {
+	for (int i = 0; i < testCases.size(); i++)
+	{
 		if(testCases[i].getErrorType()==errType)
 		{
 			testCases.erase(testCases.begin() + i - 1);

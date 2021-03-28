@@ -1,12 +1,10 @@
 #pragma once
 #include <string>
 #include <vector>
-
 #include "TestCase.hpp"
 
 class TestSuite {
 public:
-    TestSuite();
     TestSuite(std::string name);
 
     void add(const TestCase&);

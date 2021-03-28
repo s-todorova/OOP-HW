@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <string>
 
 enum class ErrorType {
     None,
@@ -13,7 +12,7 @@ class Error {
 public:
     Error();
     Error(const char* msg, ErrorType);
-    Error(ErrorType);// special constructor for None error type
+    Error(ErrorType);// special constructor for creating objects with None error type
     Error& operator=(const Error&);
     Error(const Error&);
     ~Error();
