@@ -1,6 +1,7 @@
 #include "DrinkVector.hpp"
 #include <cstring>
 #pragma warning(disable : 4996)
+
 DrinkVector::DrinkVector()
 {
     array = nullptr;
@@ -89,13 +90,12 @@ bool DrinkVector::erase(unsigned int index)
     }
 
     delete[] array;
-
     array = newArray;
     size = newSize;
     return true;
 }
 
-void DrinkVector::copyArray(const Drink* source, unsigned int size)
+void DrinkVector::copyArray(const Drink* src, unsigned int size)
 {
     if (!size)
     {
@@ -106,7 +106,7 @@ void DrinkVector::copyArray(const Drink* source, unsigned int size)
     array = new Drink[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = source[i];
+        array[i] = src[i];
     }
 
     this->size = size;

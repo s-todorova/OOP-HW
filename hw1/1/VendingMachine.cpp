@@ -25,11 +25,13 @@ VendingMachine& VendingMachine::operator=(const VendingMachine& from)
 
 bool VendingMachine::add_drink(const Drink& to_add)
 {
-    if (drinkExists(to_add) == false) {
+    if (drinkExists(to_add) == false)
+    {
         inventory.push_back(to_add);
         return true;
     }
-    else {
+    else
+    {
         return false;
     }
 }
@@ -49,12 +51,12 @@ int VendingMachine::buy_drink(const char* drink_name, const double money)
     if (exists == false) {
         return 2;
     }
-    if (exists == true && inventory[drinkIndex].get_price() == money) {
+    if (exists == true && inventory[drinkIndex].get_price() <= money) {
         income += money;
         inventory.erase(drinkIndex);
         return 0;
     }
-    if (exists == true && inventory[drinkIndex].get_price() != money) {
+    if (exists == true && inventory[drinkIndex].get_price() > money) {
         income += money;
         return 1;
     }

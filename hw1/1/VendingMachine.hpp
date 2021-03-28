@@ -18,7 +18,7 @@ public:
 private:
     double income;
     DrinkVector inventory;
-
-    bool drinkExists(const Drink& check); //helpers
+    //helper functions:
+    bool drinkExists(const Drink& check);
     int findDrink(const char* drink_name);
 };

@@ -84,6 +84,9 @@ void Drink::set_name(const char* new_name)
 
 void Drink::copyName(const char* src)
 {
-	name = new char[strlen(src) + 1];
-	strcpy(name, src);
+	if (src != nullptr)
+	{
+		name = new char[strlen(src) + 1];
+		strcpy(name, src);
+	}
 }

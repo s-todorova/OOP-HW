@@ -14,9 +14,10 @@ public:
     int vec_size() const;
     void push_back(Drink element);
     bool erase(unsigned int index);
+
 private:
     Drink* array;
     unsigned int size;
 
-    void copyArray(const Drink* source, unsigned int size);
+    void copyArray(const Drink* src, unsigned int size);
 };
