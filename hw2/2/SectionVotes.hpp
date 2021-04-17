@@ -24,4 +24,3 @@ private:
     int votesParty2;
     int votesParty3;
 };
-

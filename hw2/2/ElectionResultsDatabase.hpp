@@ -11,7 +11,7 @@ public:
     void addSection(SectionVotes);
     int numberOfSections() const;
 
-    int votesForParty(Party) const; //total votes for party from all sections
+    int votesForParty(Party) const;
     Party winningParty() const;
     Party partyWithMostVotes(int,int,int) const; //helper for comparing total party votes
    
