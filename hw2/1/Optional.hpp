@@ -6,7 +6,6 @@ public:
     Optional();
     Optional(const T& value);
 
-    //Optional& operator=(const Optional&);
     bool is_none() const;
     T get_value() const;
 
@@ -18,7 +17,7 @@ private:
 template<typename T>
 Optional<T>::Optional()
 {
-    this->value = T();
+    value = T();
     isEmpty = true;
 }
 
@@ -27,13 +26,6 @@ Optional<T>::Optional(const T& value) : value(value)
 {
     isEmpty = false;
 }
-
-//template<typename T>
-//Optional<T>& Optional<T>::operator=(const Optional& rhs)
-//{
-//    this->value = rhs.value;
-//    this->isEmpty = rhs.isEmpty;
-//}
 
 template<typename T>
 bool Optional<T>::is_none() const

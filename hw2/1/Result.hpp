@@ -3,7 +3,6 @@
 #include "Optional.hpp"
 
 template<typename T>
-
 class Result {
 public:
     Result();
@@ -25,21 +24,21 @@ Result<T>::Result()
 {
     Optional<Error> noError; //create empty error and result
     Optional<T> empty;       //as default values
-    this->error = empty;
-    this->result = noError;
+    error = noError;
+    result = empty;
 }
 
 template<typename T>
 Result<T>::Result(const T& result) : result(result)
 {
     Optional<Error> noError;
-    this->error = noError;
+    error = noError;
 }
 
 template<typename T>
 Result<T>::Result(const std::string& error_message)
 {
-    this->error = Optional<Error>(error_message);
+    error = Optional<Error>(error_message);
 }
 
 template<typename T>
