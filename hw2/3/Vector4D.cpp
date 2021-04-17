@@ -22,7 +22,7 @@ Vector4D& Vector4D::operator=(const Vector4D& rhs)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] = rhs.vec[i];
+		vec[i] = rhs.vec[i];
 	}
 	return *this;
 }
@@ -37,7 +37,7 @@ Vector4D& Vector4D::operator+=(const Vector4D& rhs)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] += rhs.vec[i];
+		vec[i] += rhs.vec[i];
 	}
 	return *this;
 }
@@ -52,7 +52,7 @@ Vector4D& Vector4D::operator-=(const Vector4D& rhs)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] -= rhs.vec[i];
+		vec[i] -= rhs.vec[i];
 	}
 	return *this;
 }
@@ -71,7 +71,7 @@ Vector4D& Vector4D::operator*=(const Vector4D& rhs)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] *= rhs.vec[i];
+		vec[i] *= rhs.vec[i];
 	}
 	return *this;
 }
@@ -109,7 +109,7 @@ Vector4D& Vector4D::operator*=(const double value)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] *= value;
+		vec[i] *= value;
 	}
 	return *this;
 }
@@ -128,7 +128,7 @@ Vector4D& Vector4D::operator/=(const double value)
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		this->vec[i] /= value;
+		vec[i] /= value;
 	}
 	return *this;
 }
@@ -137,7 +137,7 @@ bool Vector4D::operator==(const Vector4D& rhs) const
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		if(this->vec[i]!=rhs.vec[i])
+		if(vec[i] != rhs.vec[i])
 		{
 			return false;
 		}
@@ -158,11 +158,11 @@ bool Vector4D::operator<(const Vector4D& rhs) const
 	}
 	for (int i = 0; i < vec.size(); i++)
 	{
-		if (this->vec[i] == rhs.vec[i])
+		if (vec[i] == rhs.vec[i])
 		{
 			continue;
 		}
-		if (this->vec[i] > rhs.vec[i])
+		if (vec[i] > rhs.vec[i])
 		{
 			return false;
 		}
@@ -178,11 +178,11 @@ bool Vector4D::operator>(const Vector4D& rhs) const
 	}
 	for (int i = 0; i < vec.size(); i++)
 	{
-		if (this->vec[i] == rhs.vec[i])
+		if (vec[i] == rhs.vec[i])
 		{
 			continue;
 		}
-		if (this->vec[i] < rhs.vec[i])
+		if (vec[i] < rhs.vec[i])
 		{
 			return false;
 		}
@@ -204,7 +204,7 @@ bool Vector4D::operator!() const
 {
 	for (int i = 0; i < vec.size(); i++)
 	{
-		if (this->vec[i] != 0)
+		if (vec[i] != 0)
 		{
 			return false;
 		}

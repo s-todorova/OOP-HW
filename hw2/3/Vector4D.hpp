@@ -2,9 +2,8 @@
 #include <vector>
 
 class Vector4D {
-
 public:
-    Vector4D(); //default constructor
+    Vector4D();
     Vector4D(double, double, double, double);
 
     double& operator[](unsigned int index);
